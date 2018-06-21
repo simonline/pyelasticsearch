@@ -713,8 +713,8 @@ class ElasticSearch(object):
         else:
             body = {'query': query}
         return self.send_request(
-            'DELETE',
-            [self._concat(index), self._concat(doc_type), '_query'],
+            'POST',
+            [self._concat(index), self._concat(doc_type), '_delete_by_query'],
             body,
             query_params=query_params)
 
